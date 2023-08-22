@@ -1,0 +1,24 @@
+{
+    "ROLE": {
+        "ADMIN": 1,
+        "MODERATOR" : 2,
+        "AGENT": 3,
+        "USERS" : 4
+    },
+    "STATUS" : {
+        "UNASSIGN" : "unassigned",
+        "TODO" : "todo",
+        "INPROGRESS" : "in-progress",
+        "BACKLOG" : "back-log",
+        "CLOSE" : "closed"
+    },
+    "ACTIVITIES":{
+        "GENERATE" : "Ticket Generated.",
+        "ASSIGN" : "Agent Assigned.",
+        "CHANGE-AGENT" : "Agent Assign Task to Other Agent.",
+        "STATUS" : "Ticket Status Changed.",
+        "COMMENT" : "Comment Added.",
+        "BACK-LOG" : "Ticket is on back-log stage.",
+        "CLOSE" : "Ticket Resolved."
+    }
+}

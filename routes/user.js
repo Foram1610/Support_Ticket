@@ -1,0 +1,20 @@
+const express = require('express')
+const route = express.Router()
+const user = require('../controller/user.controller')
+const password = require('../controller/auth.controller')
+const image = require('../middleware/image')
+const auth = require('../middleware/auth')
+const { checkUser, Password, valResult } = require('../middleware/validation')
+
+route.post('/user', auth, checkUser, valResult, user.addUser)
+route.put('/user/:id', auth, image.single('image'), user.updateUser)
+route.put('/userProfile', auth, image.single('image'), user.updateUserProfile)
+route.delete('/user/:id', auth, user.deleteUser)
+route.post('/user/setPassword', auth, Password, valResult, password.forgotPassword)
+route.post('/user/resetPassword', Password, valResult, user.resetPassword)
+route.get('/user/:id', auth, user.getUserById)
+route.post('/_user', auth, user.displayUsers)
+route.get('/getUsersAccordingly/:id', auth, user.getUsersAccordingly)
+route.get('/getAddedByUsers', auth, user.getAddedByUsers)
+
+module.exports = route
